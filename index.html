@@ -10,7 +10,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
     <link rel="shortcut icon" type="image/png" href="img/favicon.png"/>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
           integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
           crossorigin=""/>
@@ -19,17 +19,27 @@
             crossorigin=""></script>
     <link href="https://fonts.googleapis.com/css?family=Abril+Fatface&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono:400,700&display=optional" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="js/clippy/clippy.css" media="all">
+    <script src="http://code.jquery.com/jquery-1.7.min.js"></script>
+    <script src="js/clippy/clippy.min.js"></script>
 </head>
 
 <body>
+<script type="text/javascript">
+    clippy.load('Clippy', function (agent) {
+        agent.show();
+    });
+</script>
 <div class="content">
     <h1 class="title">Tern</h1>
     <h2 class="subtitle">Travel the World and Solve the Problems</h2>
-    <p>The world is facing with several problems and every nation face with some difficulties while solving it. The
+    <p>Problems can be serious or fun. In the world of data, we are solving some fun problems like predicting what will
+        be the next generation of music and serious problems like finding a way to access clear water. The
         modern methods like examining the data and see the solution behind this data can be the best way to approach
         these problems.</p>
     <div id="main_map" style="width: auto; height: 60vh"></div>
 </div>
-<script src="index.js"></script>
+<script src="js/constants.js"></script>
+<script src="js/index.js"></script>
 </body>
 </html>
