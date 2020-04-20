@@ -10,7 +10,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
     <link rel="shortcut icon" type="image/png" href="img/favicon.png"/>
-    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
           integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
           crossorigin=""/>
@@ -21,14 +21,48 @@
     <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono:400,700&display=optional" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="js/clippy/clippy.css" media="all">
     <script src="http://code.jquery.com/jquery-1.7.min.js"></script>
-    <script src="js/clippy/clippy.min.js"></script>
+    <script src="js/clippy/clippy.js"></script>
 </head>
 
 <body>
 <script type="text/javascript">
-    clippy.load('Clippy', function (agent) {
-        agent.show();
+    let agent;
+
+    function speak1(agent) {
+        agent.speak('<p>The above map shows different locations. These locations face with different problems. These problems require to use data appropriately.<br><br><a href="javascript:speak2(agent)">Next</a></p>');
+    }
+
+    function speak2(agent) {
+        agent.speak('<p><b>What is data?</b><br><br>Data can be everything. The term, data, includes all collected information from any source. It can be text, picture, link or numeric values.<br><a href="javascript:speak3(agent);">Next</a></p>');
+    }
+
+    function speak3(agent) {
+        agent.speak('<p><b>What do you mean by any source?</b><br>' +
+            'Yes, any source! For example, if you want to learn about the average weight of your classmates, you need to collect the weight information from all your friends. The collected numeric information is data. <br>' +
+            'Or, let’s give a more complex and real-life example. How can Youtube recommend new videos related to your watching stream? Well, the system collects data. Not, only from you, but from everyone, so, they can cluster the people based on their interests.<br>' +
+            'If A and B are in the same cluster, they will simply feed with each other’s watching history. All these video information and people’s interests are part of data.<br><a href="javascript:speak4(agent);">Next</a></p>');
+    }
+
+    function speak4(agent) {
+        agent.speak('<p><b>Why do we need to learn about data?\n</b><br><br>' +
+            'It is called data literacy. The last twenty years, we have observed a fantastic increase in the amount of collected and stored data. Now, it is time to interpret the data. If you can interpret the data well, you rule the world! Okay, maybe we do not want to rule the world but if you want to create a great impact on society, you need to understand the habits of the society. We are talking about more than 6 billion people! You can’t meet with all of these people. So, you need to interpret lines and lines of XLS or CSV files. What are these files? Well, you will learn…' +
+            '<br><br><a href="javascript:speak5(agent);">Next</a></p>');
+    }
+
+    function speak5(agent) {
+        agent.speak('<p>Okay, now let’s start with the basics. To program or interpret digital things, we always need an environment. If you want to present something, you can use Powerpoint or Google Slides, if you want to browse the internet you can use Google Chrome, Mozilla Firefox or your favorite web browser. And, if you want to study data, you can have options like Google Sheets, Excel, R, Marti and many other tools. <br><br><a href="javascript:speak6(agent);">Next</a></p>');
+    }
+
+    function speak6(agent) {
+        agent.speak('<p>Select Istanbul to see the first mission.<br><br><a href="javascript:agent.animate(); agent.closeBalloon()">OK</a></p>');
+    }
+
+    clippy.load('Rover', function (a) {
+        agent = a;
+        a.show();
+        a.speak('<p><b>Hello and welcome to Tern!</b><br><br>You can play with the data around the world and solve cases.<br><br><a href="javascript:speak1(agent);">Start Now!</a></p>');
     });
+
 </script>
 <div class="content">
     <h1 class="title">Tern</h1>

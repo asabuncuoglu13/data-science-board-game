@@ -5,37 +5,29 @@
 }
 
 .clippy-balloon {
-
-    background: #FFC;
+    background: #cdd0cf;
     color: black;
     padding: 8px;
     border: 1px solid black;
     border-radius: 5px;
-
 }
 
 .clippy-content {
-    max-width: 200px;
-    min-width: 120px;
-    font-family: "Microsoft Sans", sans-serif;
-    font-size: 10pt;
+    max-width: 500px;
+    min-width: 200px;
+    height: auto;
+    font-size: 12pt;
+    margin-bottom: 48pt;
 }
 
-.clippy-tip {
-    width: 10px;
-    height: 16px;
-    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAgCAMAAAAlvKiEAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAAlQTFRF///MAAAA////52QwgAAAAAN0Uk5T//8A18oNQQAAAGxJREFUeNqs0kEOwCAIRFHn3//QTUU6xMyyxii+jQosrTPkyPEM6IN3FtzIRk1U4dFeKWQiH6pRRowMVKEmvronEynkwj0uZJgR22+YLopPSo9P34wJSamLSU7lSIWLJU7NkNomNlhqxUeAAQC+TQLZyEuJBwAAAABJRU5ErkJggg==) no-repeat;
-    position: absolute;
-}
-
-.clippy-top-left .clippy-tip {
+.clippy-top-left {
     top: 100%;
     margin-top: 0px;
     left: 100%;
     margin-left: -50px;
 }
 
-.clippy-top-right .clippy-tip {
+.clippy-top-right {
     top: 100%;
     margin-top: 0px;
     left: 0;
@@ -44,7 +36,7 @@
 
 }
 
-.clippy-bottom-right .clippy-tip {
+.clippy-bottom-right {
     top: 0;
     margin-top: -16px;
     left: 0;
@@ -52,7 +44,7 @@
     background-position: -10px -16px;
 }
 
-.clippy-bottom-left .clippy-tip {
+.clippy-bottom-left {
     top: 0;
     margin-top: -16px;
     left: 100%;

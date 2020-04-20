@@ -1,11 +1,13 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600|Quicksand:400,700&display=swap&subset=latin-ext');
 
 :root {
-    --background: #232946;
-    --headline: #f9bc60;
-    --buton-bg: #b8c1ec;
-    --font-color: #fffffe;
-    --link: #b8c1ec;
+    --white: #F6F6F6;
+    --grey: #E7E7E7;
+    --dark: #160F66;
+    --yellow: #F6C343;
+    --red: #EE4323;
+    --green: #1FB373;
+    --blue: #6121F5;
 }
 
 html {
@@ -13,15 +15,15 @@ html {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    color: var(--headline);
+    color: var(--white);
 }
 
 body {
-    background-color: var(--background);
+    background-color: var(--dark);
     font-family: 'Open Sans', sans-serif;
     font-size: 16px;
     line-height: 26px;
-    color: var(--font-color);
+    color: var(--grey);
     max-width: 960px;
     margin: 0 auto;
 }
@@ -43,7 +45,7 @@ body {
 
 .title {
     font-family: 'Quicksand', sans-serif;
-    color: var(--headline);
+    color: var(--white);
     font-size: 40px;
     margin: 20px auto;
 }
@@ -51,7 +53,7 @@ body {
 a {
     text-decoration: none;
     position: relative;
-    color: var(--link);
+    color: var(--yellow);
     font-family: 'Quicksand', sans-serif;
     line-height: 3vh;
 }
@@ -59,7 +61,7 @@ a {
 a:after {
     content: '';
     display: block;
-    border-bottom: calc(0.3em + 0.3vw) solid var(--headline);
+    border-bottom: calc(0.3em + 0.3vw) solid var(--yellow);
     width: 0;
     position: absolute;
     left: 0;
@@ -69,6 +71,14 @@ a:after {
 
 a:hover:after {
     width: 100%;
+}
+
+.clippy-balloon a {
+    text-decoration: none;
+    position: relative;
+    color: var(--dark);
+    font-family: 'Quicksand', sans-serif;
+    line-height: 3vh;
 }
 
 .container {
@@ -83,30 +93,26 @@ a:hover:after {
 }
 
 .card {
-    background: var(--buton-bg);
-    color: var(--background);
-    border-left: 16px solid var(--headline);
+    background: var(--red);
+    color: var(--white);
+    border-left: 16px solid var(--yellow);
     padding: 10px;
 }
 
-.card a {
-  text-decoration: none;
-  color: var(--background);
-  position: relative;
-  font-weight: bold;
+.frame {
+    display: block;
+    width: 100%;
+    height: 450px;
+    min-width: 450px;
+    margin: auto;
 }
 
-.card a:after {
-  content: '';
-  display: block;
-  border-bottom: calc(0.3em + 0.3vw) solid var(--background);
-  width: 0;
-  position: absolute;
-  left: 0;
-  -webkit-transition: 1s ease;
-  transition: 1s ease;
-}
-
-.card a:hover:after {
-  width: 100%;
+.full {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100vh;
+    padding: 40px;
+    padding-top: 0;
 }

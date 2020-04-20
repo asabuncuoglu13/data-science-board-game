@@ -664,12 +664,11 @@ clippy.Balloon = function (targetEl) {
 
 clippy.Balloon.prototype = {
 
-    WORD_SPEAK_TIME:320,
     CLOSE_BALLOON_DELAY:2000,
 
     _setup:function () {
 
-        this._balloon = $('<div class="clippy-balloon"><div class="clippy-tip"></div><div class="clippy-content"></div></div> ').hide();
+        this._balloon = $('<div class="clippy-balloon"><div class="clippy-content"></div></div> ').hide();
         this._content = this._balloon.find('.clippy-content');
 
         $(document.body).append(this._balloon);
@@ -795,29 +794,15 @@ clippy.Balloon.prototype = {
     _sayWords:function (text, hold, complete) {
         this._active = true;
         this._hold = hold;
-        var words = text.split(/[^\S-]/);
-        var time = this.WORD_SPEAK_TIME;
         var el = this._content;
-        var idx = 1;
-
 
         this._addWord = $.proxy(function () {
             if (!this._active) return;
-            if (idx > words.length) {
-                this._active = false;
-                if (!this._hold) {
-                    complete();
-                    this.hide();
-                }
-            } else {
-                el.text(words.slice(0, idx).join(' '));
-                idx++;
-                this._loop = window.setTimeout($.proxy(this._addWord, this), time);
-            }
+            el.html(text);
+            complete();
         }, this);
 
         this._addWord();
-
     },
 
     close:function () {
