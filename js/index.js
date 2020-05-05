@@ -1,7 +1,28 @@
+let mode = "race";
 let mainMap = L.map('main_map').setView(coordinates[0], 13);
 
+const customPop = [
+    {
+        'className': 'racePop'
+    },
+    {
+        'className': 'rushPop'
+    },
+    {
+        'className': 'vocabPop'
+    }];
+
+function changeMode(id) {
+    mode = id;
+
+}
+
 function createHTMLPopup(imageURL, title, text, city) {
-    return '<img src="' + imageURL + '"><b>' + title + '</b><br><p>' + text + '</p><br><a href=' + 'detail.html#' + city + '>See' +
+    return '<img src="' + imageURL +
+        '"><b>' + title +
+        '</b><br><p>' + text +
+        '</p><br><a href=' + 'detail.html#' + city + '-' + mode +
+        '>See' +
         ' Details</a>';
 }
 
@@ -40,12 +61,11 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
 }).addTo(mainMap);
 
 // Add Istanbul Data Problem
-L.marker(coordinates[0]).addTo(mainMap)
-    .bindPopup(problems[0]).openPopup();
-// then the rest
+L.marker(coordinates[0]).bindPopup(problems[0], customPop[0]).addTo(mainMap).openPopup();
+
 for (var i = 1; i < coordinates.length; i++) {
-    L.marker(coordinates[i]).addTo(mainMap)
-        .bindPopup(problems[i]);
+    L.marker(coordinates[i])
+        .bindPopup(problems[i], customPop[1]).addTo(mainMap);
 }
 
 var popup = L.popup();

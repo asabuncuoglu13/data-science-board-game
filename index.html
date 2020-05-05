@@ -17,53 +17,14 @@
     <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
             integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
             crossorigin=""></script>
-    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono:400,700&display=optional" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="js/clippy/clippy.css" media="all">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-    <script src="js/clippy/clippy.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+    <script src="js/constants.js"></script>
 </head>
 
 <body>
-<script type="text/javascript">
-    let agent;
-
-    function speak1(agent) {
-        agent.speak('<p>The above map shows different locations. These locations face with different problems. These problems require to use data appropriately.<br><br><a href="javascript:speak2(agent)">Next</a></p>');
-    }
-
-    function speak2(agent) {
-        agent.speak('<p><b>What is data?</b><br><br>Data can be everything. The term, data, includes all collected information from any source. It can be text, picture, link or numeric values.<br><a href="javascript:speak3(agent);">Next</a></p>');
-    }
-
-    function speak3(agent) {
-        agent.speak('<p><b>What do you mean by any source?</b><br>' +
-            'Yes, any source! For example, if you want to learn about the average weight of your classmates, you need to collect the weight information from all your friends. The collected numeric information is data. <br>' +
-            'Or, let’s give a more complex and real-life example. How can Youtube recommend new videos related to your watching stream? Well, the system collects data. Not, only from you, but from everyone, so, they can cluster the people based on their interests.<br>' +
-            'If A and B are in the same cluster, they will simply feed with each other’s watching history. All these video information and people’s interests are part of data.<br><a href="javascript:speak4(agent);">Next</a></p>');
-    }
-
-    function speak4(agent) {
-        agent.speak('<p><b>Why do we need to learn about data?\n</b><br><br>' +
-            'It is called data literacy. The last twenty years, we have observed a fantastic increase in the amount of collected and stored data. Now, it is time to interpret the data. If you can interpret the data well, you rule the world! Okay, maybe we do not want to rule the world but if you want to create a great impact on society, you need to understand the habits of the society. We are talking about more than 6 billion people! You can’t meet with all of these people. So, you need to interpret lines and lines of XLS or CSV files. What are these files? Well, you will learn…' +
-            '<br><br><a href="javascript:speak5(agent);">Next</a></p>');
-    }
-
-    function speak5(agent) {
-        agent.speak('<p>Okay, now let’s start with the basics. To program or interpret digital things, we always need an environment. If you want to present something, you can use Powerpoint or Google Slides, if you want to browse the internet you can use Google Chrome, Mozilla Firefox or your favorite web browser. And, if you want to study data, you can have options like Google Sheets, Excel, R, Marti and many other tools. <br><br><a href="javascript:speak6(agent);">Next</a></p>');
-    }
-
-    function speak6(agent) {
-        agent.speak('<p>Select Istanbul to see the first mission.<br><br><a href="javascript:agent.animate(); agent.closeBalloon()">OK</a></p>');
-    }
-
-    clippy.load('Rover', function (a) {
-        agent = a;
-        a.show();
-        a.speak('<p><b>Hello and welcome to Tern!</b><br><br>You can play with the data around the world and solve cases.<br><br><a href="javascript:speak1(agent);">Start Now!</a></p>');
-    });
-
-</script>
 <div class="content">
     <h1 class="title">Tern</h1>
     <h2 class="subtitle">Travel the World and Solve the Problems</h2>
@@ -71,9 +32,26 @@
         be the next generation of music and serious problems like finding a way to access clear water. The
         modern methods like examining the data and see the solution behind this data can be the best way to approach
         these problems.</p>
+    <div class="btn-container">
+        <div class="btn-grid btn-race" id="race-button"><img src="ui/Race-Button.png"></div>
+        <div class="btn-grid btn-rush" id="rush-button"><img src="ui/Rush-Button.png"></div>
+        <div class="btn-grid btn-vocab" id="vocab-button"><img src="ui/Vocab-Button.png"></div>
+    </div>
     <div id="main_map" style="width: auto; height: 60vh"></div>
+    <df-messenger class="dialog"
+            intent="WELCOME"
+            chat-title="Welcome to Tern"
+            chat-icon="ui/Agent.png"
+            agent-id="a4771bdb-635c-4fb8-9ee8-b9c339244804"
+            language-code="en"
+    ></df-messenger>
 </div>
-<script src="js/constants.js"></script>
 <script src="js/index.js"></script>
+<script>
+    $("#race-button").click(() => changeMode("race"));
+    $("#rush-button").click(() => changeMode("rush"));
+    $("#vocab-button").click(() => changeMode("vocab"));
+    buildMap();
+</script>
 </body>
 </html>

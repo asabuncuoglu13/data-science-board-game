@@ -1,4 +1,4 @@
-function fillPage(city) {
+function fillPage(city, mode) {
     document.getElementById('content').innerHTML =
         '<h1 class="title">' + getTitle(city) + '</h1>\n' +
         '<h2 class="subtitle">' + getSubtitle(city) + '</h2>' +
@@ -69,4 +69,4 @@ function getIframe(city) {
     return frame;
 }
 
-fillPage(currentDetail);
+fillPage(currentDetail[0], currentDetail[1]);
