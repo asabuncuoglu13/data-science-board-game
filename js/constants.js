@@ -1,3 +1,6 @@
+//const marti_link = "https://karton-project.github.io/marti/";
+const marti_link = "../marti/index.html";
+
 const tr = "tr";
 const uk = "uk";
 const aus = "aus";

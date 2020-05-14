@@ -32,10 +32,10 @@ body {
     line-height: 26px;
     color: var(--grey);
     max-width: 960px;
-    margin: 0 auto;
+    margin: 20px auto;
 }
 
-img {
+.center {
     object-fit: contain;
     display: block;
     margin-left: auto;
@@ -43,6 +43,43 @@ img {
     width: 70%;
     height: auto;
 }
+
+.jakob-light {
+    font-family: jakob, sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.jakob-normal {
+    font-family: jakob, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.jakob-bold {
+    font-family: jakob, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.six-hand-brush {
+    font-family: six-hands-brush, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.six-hand-marker {
+    font-family: six-hands-marker, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.nove {
+    font-family: nove, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
 
 .google-slides-container {
     position: relative;
@@ -136,21 +173,27 @@ a:hover:after {
 }
 
 .btn-grid {
-    justify-self: center;
     cursor: pointer;
+    object-fit: contain;
+    display: block;
+    width: 70%;
+    height: auto;
 }
 
-.btn-race {
+.btn-1 {
+    justify-self: start;
     grid-column-start: 1;
     grid-column-end: 2;
 }
 
-.btn-rush {
+.btn-2 {
+    justify-self: center;
     grid-column-start: 2;
     grid-column-end: 3;
 }
 
-.btn-vocab {
+.btn-3 {
+    justify-self: end;
     grid-column-start: 3;
     grid-column-end: 4;
 }
@@ -159,6 +202,14 @@ a:hover:after {
     max-width: 960px;
     display: grid;
     grid-template-columns: 300px 300px 300px;
+    grid-template-rows: auto;
+    margin: 10px auto;
+}
+
+.detail-btn-container {
+    max-width: 1000px;
+    display: grid;
+    grid-template-columns: 360px 100px 540px;
     grid-template-rows: auto;
     margin: 10px auto;
 }
@@ -182,6 +233,10 @@ a:hover:after {
     display: block;
     position: absolute;
     z-index: 1000;
+}
+
+.solve_button {
+    float: right;
 }
 
 .racePop .leaflet-popup-tip,
