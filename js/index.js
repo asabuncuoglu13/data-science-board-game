@@ -1,8 +1,7 @@
 let mode = 0;
 let mainMap;
 
-const customPop = [
-    {
+const customPop = [{
         'className': 'racePop'
     },
     {
@@ -10,13 +9,14 @@ const customPop = [
     },
     {
         'className': 'vocabPop'
-    }];
+    }
+];
 
 function createHTMLPopup(imageURL, title, text, city) {
     return '<img src="' + imageURL +
         '"><b>' + title +
         '</b><br><p>' + text +
-        '</p><br><a href=' + 'detail.html#' + city + '-' + mode +
+        '</p><br><a href=' + 'detail.html#' + city + '=' + mode +
         '>See Details</a>';
 }
 
@@ -43,7 +43,7 @@ let problems = [
         " the same time. ", aus)
 ];
 
-function buildMap(){
+function buildMap() {
     document.getElementById('main_map').innerHTML = "";
     mainMap = L.map('main_map').setView(coordinates[0], 13);
     L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
@@ -62,5 +62,3 @@ function buildMap(){
             .bindPopup(problems[i], customPop[mode]).addTo(mainMap);
     }
 }
-
-

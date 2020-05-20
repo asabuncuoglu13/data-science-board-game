@@ -2,7 +2,7 @@ function fillPage(city, mode) {
     document.getElementById('content').innerHTML =
         '<h1 class="title">' + getTitle(city) + '</h1>\n' +
         '<h2 class="subtitle">' + getSubtitle(city) + '</h2>' +
-        '<p>' + getText(city) + '</p>\n' + getIframe(city);
+        '<p>' + getText(city) + '</p>\n' + getIframe(mode, city);
 }
 
 function getTitle(city) {
@@ -56,15 +56,17 @@ function getDataSource() {
     return link;
 }
 
-function getIframe(city) {
-   let frame = "";
-    switch (city) {
-        case tr:
+function getIframe(mode, city) {
+    let frame = "";
+    if (city === tr) {
+        if (mode === 0) {
             frame = "<iframe class='frame'" +
-                " src=\"https://data.ibb.gov.tr/dataset/rayli-sistemler-maksimum-yolculuk-sayisi/resource/81fa122e-49c1-4191-aac9-a38becd0c359/view/a63d798f-377a-46b8-9882-525f5e6d751f\" frameBorder=\"0\"></iframe>"
-            break;
-        default:
-            break;
+                " src=\"https://data.ibb.gov.tr/dataset/rayli-sistemler-maksimum-yolculuk-sayisi/resource/81fa122e-49c1-4191-aac9-a38becd0c359/view/a63d798f-377a-46b8-9882-525f5e6d751f\" frameBorder=\"0\"></iframe>";
+        }
+        if (mode === 2) {
+            frame = '<iframe hidden id="JotFormIFrame-201402082424036" title="Form" onload="window.parent.scrollTo(0,0)" allowtransparency="true" allowfullscreen="true" allow="geolocation; microphone; camera" src="https://form.jotform.com/201402082424036" frameborder="0"' +
+                'style=" min-width: 100%; height:539px; border:none;" scrolling="no"> </iframe>';
+        }
     }
     return frame;
 }
