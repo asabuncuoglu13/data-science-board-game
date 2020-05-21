@@ -16,6 +16,7 @@
     <link href="https://fonts.googleapis.com/css?family=Abril+Fatface&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono:400,700&display=optional" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="js/language/en.js"></script>
     <script>
         let queries = window.location.href.split("#");
         let currentDetail = queries[1].split("=");
@@ -30,9 +31,8 @@
     <div id="content" class="content"></div>
     <script src="js/constants.js"></script>
     <script src="js/detail.js"></script>
-    <script src="js/jotform-frame.min.js"></script>
     <script>
-        $("#back-button").click(() => window.history.back());
+        $("#back-button").click(() => window.location.href = "./index.html");
         $("#marti-button").click(() => window.location.href = marti_link + "#" + currentDetail);
     </script>
 </body>
