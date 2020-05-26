@@ -15,7 +15,9 @@ const liverpool_h2 = "Over the course of their career, and even beyond their spl
 const sydney_h1 = "Bush Fires";
 const sydney_h2 = "In 2020, Australia faced a climate disaster that affects the whole country. Multiple bushfires occurred at the same time.";
 
-
+const silicon_h1 = "Silicon Valley";
+const silicon_h2 = "Silicon Valley is a region in the southern part of the San Francisco Bay Area in Northern" +
+    " California that serves as a global center for high technology, innovation, venture capital, and social media.";
 
 // ******** Detail File **********
 const ist_sub = "Railway transportation is one of the most important investment areas in crowded cities as it handles large numbers of people with ease, it is environmentally friendly and it reduces the traffic.";

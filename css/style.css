@@ -44,6 +44,13 @@ body {
     height: auto;
 }
 
+.box{
+    float:left;
+}
+.clear{
+    clear:both;
+}
+
 .jakob-light {
     font-family: jakob, sans-serif;
     font-weight: 300;
@@ -170,6 +177,22 @@ a:hover:after {
     min-height: 100vh;
     padding: 40px;
     padding-top: 0;
+}
+
+.rush-grid {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    grid-template-rows: auto;
+}
+
+.chart-box {
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+.quiz-box {
+    grid-column-start: 3;
+    grid-column-end: 4;
 }
 
 .btn-grid {

@@ -14,9 +14,12 @@ function getTitle(city) {
     let title = "";
     if (city === tr) {
         title = ist_h1;
-    }
-    if (city === uk) {
+    } else if (city === uk) {
         title = liverpool_h1;
+    } else if (city === nor) {
+        title = oslo_h1;
+    } else if (city === silicon) {
+        title = silicon_h1;
     }
     return title;
 }
@@ -33,6 +36,8 @@ function getText(city) {
     let text = "";
     if (city === tr) {
         text = ist_text;
+    }else if (city == silicon) {
+        text = silicon_h2;
     }
     return text;
 }
@@ -50,6 +55,10 @@ function getIframe(mode, city) {
     if (city === tr) {
         if (mode === "0") {
             frame = ist_data_view_frame;
+        }
+        if (mode === "1") {
+            frame = '<div class="rush-grid"><div class="chart-box">' + ist_rush_frame_chart  + '</div>' +
+            '<div class="quiz-box">' + ist_rush_frame_quiz + '</div>\n</div>';
         }
         if (mode === "2") {
             frame = ist_vocab_frame;

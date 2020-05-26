@@ -25,7 +25,8 @@ function populateHTMLPopups() {
         createHTMLPopup("", ist_h1, ist_h2, tr),
         createHTMLPopup("", oslo_h1, oslo_h2, nor),
         createHTMLPopup("", liverpool_h1, liverpool_h2, uk),
-        createHTMLPopup("", sydney_h1, sydney_h2, aus)
+        createHTMLPopup("", sydney_h1, sydney_h2, aus),
+        createHTMLPopup("", silicon_h1, silicon_h2, silicon)
     ];
 }
 
