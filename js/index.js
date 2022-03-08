@@ -17,7 +17,7 @@ function createHTMLPopup(imageURL, title, text, city) {
     return '<img src="' + imageURL +
         '"><b>' + title +
         '</b><br><p>' + text +
-        '</p><br><a href=' + 'detail.html#' + city + '=' + mode + '>' + see_details + '</a>';
+        '</p><br><a href=' + 'activity-cards.html#' + city + '=' + mode + '>' + see_details + '</a>';
 }
 
 function populateHTMLPopups() {
