@@ -2,7 +2,7 @@ let boardMap, cardIst, cardOslo, cardLiv, cardMel;
 let cardIstPos, cardOsloPos, cardLivPos, cardMelPos;
 let isCardIstPos, isCardOsloPos, isCardLivPos, isCardMelPos;
 let imageSize;
-let proportion = windowWidth / 4961;
+let proportion;
 let yOff = 0;
 
 function preload() {
@@ -14,11 +14,12 @@ function preload() {
 }
 
 function setup() {
+  proportion = windowWidth / 4961;
   createCanvas(windowWidth, windowHeight);
-  background(112, 204, 31);
+  background(230);
   setCardPositions();
   image(boardMap, 0,0, windowWidth,  proportion * 3509);
-  image(cardLiv, cardLivPos[0], cardLivPos[1]);
+  image(cardLiv, cardLivPos[0], cardLivPos[1], proportion * 1000, proportion * 1000);
   printTitle('Select a Card', width * 0.1, height * 0.1);
 }
 
