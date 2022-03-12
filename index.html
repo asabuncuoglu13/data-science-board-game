@@ -16,7 +16,6 @@
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
     <script src="js/constants.js"></script>
     <script src="js/language/en.js"></script>
 </head>
@@ -24,29 +23,18 @@
 <body>
     <div class="content">
         <h1 class="title">Tern</h1>
-        <h2 class="subtitle">Travel the World and Solve the Problems</h2>
-        <p>Problems can be serious or fun. In the world of data, we are solving some fun problems like predicting what will be the next generation of music and serious problems like finding a way to access clear water. The modern methods like examining the
-            data and see the solution behind this data can be the best way to approach these problems.</p>
-        <div class="btn-container">
-            <div class="btn-grid btn-1" id="race-button"><img class="center" src="ui/Race-Button.png"></div>
-            <div class="btn-grid btn-2" id="rush-button"><img class="center" src="ui/Rush-Button.png"></div>
-            <div class="btn-grid btn-3" id="vocab-button"><img class="center" src="ui/Vocab-Button.png"></div>
-        </div>
+        <h2 class="subtitle">Explore the Sustainability Data Around the World</h2>
+        <ul>
+            <li>Select a marker on the map.</li>
+            <li>Click on "Start the Activity" button of the pop-up box.</li>
+            <li>Use Martı app to explore the data and complete the given tasks.</li>
+            <li>Read the suggested articles.</li>
+        </ul>
         <div id="main_map" style="width: auto; height: 60vh"></div>
-        <df-messenger class="dialog" intent="WELCOME" s chat-title="Welcome to Tern" chat-icon="ui/agent-head.png" agent-id="a4771bdb-635c-4fb8-9ee8-b9c339244804" language-code="en"></df-messenger>
     </div>
     <script src="js/index.js"></script>
     <script>
         buildMap();
-        function changeMode(id) {
-            mode = id;
-            mainMap.off();
-            mainMap.remove();
-            buildMap();
-        }
-        $("#race-button").click(() => changeMode(0));
-        $("#rush-button").click(() => changeMode(1));
-        $("#vocab-button").click(() => changeMode(2));
     </script>
 </body>
 

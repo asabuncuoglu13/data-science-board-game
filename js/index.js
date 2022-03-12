@@ -2,7 +2,8 @@ let mode = 0;
 let mainMap;
 let popupArr;
 
-const customPop = [{
+const customPop = [
+    {
         'className': 'racePop'
     },
     {
@@ -17,7 +18,7 @@ function createHTMLPopup(imageURL, title, text, city) {
     return '<img src="' + imageURL +
         '"><b>' + title +
         '</b><br><p>' + text +
-        '</p><br><a href=' + 'detail.html#' + city + '=' + mode + '>' + see_details + '</a>';
+        '</p><br><a href=' + 'https://karton-project.github.io/marti/#' + city + '=' + mode + '>' + see_details + '</a>';
 }
 
 function populateHTMLPopups() {
@@ -26,6 +27,7 @@ function populateHTMLPopups() {
         createHTMLPopup("", oslo_h1, oslo_h2, nor),
         createHTMLPopup("", liverpool_h1, liverpool_h2, uk),
         createHTMLPopup("", sydney_h1, sydney_h2, aus),
+        createHTMLPopup("", eu_h1, eu_h2, eu),
         createHTMLPopup("", silicon_h1, silicon_h2, silicon)
     ];
 }

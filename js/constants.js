@@ -5,6 +5,7 @@ const tr = "tr";
 const uk = "uk";
 const aus = "aus";
 const nor = "nor";
+const eu = "eu";
 const silicon = "silicon";
 
 let coordinates = [
@@ -12,6 +13,7 @@ let coordinates = [
     [60, 11], // Oslo
     [53.4, -3], // Liverpool
     [-33, 150], // Sydney
+    [50.85, 4.37], //Brussels (EU)
     [37.42, -122.08] // Googleplex Silicon Valley
 ];
 

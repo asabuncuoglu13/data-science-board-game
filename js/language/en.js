@@ -19,6 +19,9 @@ const silicon_h1 = "Silicon Valley";
 const silicon_h2 = "Silicon Valley is a region in the southern part of the San Francisco Bay Area in Northern" +
     " California that serves as a global center for high technology, innovation, venture capital, and social media.";
 
+const eu_h1 = "Women Participation to Research Organizations";
+const eu_h2 = "";
+
 // ******** Detail File **********
 const ist_sub = "Railway transportation is one of the most important investment areas in crowded cities as it handles large numbers of people with ease, it is environmentally friendly and it reduces the traffic.";
 const ist_text = "The municipality needs a quick way to visualize this data to define the requirements. You can use Google Sheets to easily visualize the data on the map. [Add custom marker colors to our interface, change the color with conditional formatting]";
